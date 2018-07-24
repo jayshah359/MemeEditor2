@@ -13,6 +13,9 @@
 		E04D46961F86EA2000B320F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04D46941F86EA2000B320F7 /* Main.storyboard */; };
 		E04D46981F86EA2000B320F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04D46971F86EA2000B320F7 /* Assets.xcassets */; };
 		E04D469B1F86EA2000B320F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04D46991F86EA2000B320F7 /* LaunchScreen.storyboard */; };
+		E05C198E2106D32B00303722 /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05C198D2106D32B00303722 /* MemeDetailViewController.swift */; };
+		E06872BF20FC3AC700FBD0D7 /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06872BE20FC3AC700FBD0D7 /* MemeTableViewController.swift */; };
+		E06872C120FC3ADE00FBD0D7 /* MemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06872C020FC3ADE00FBD0D7 /* MemeCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		E04D46971F86EA2000B320F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E04D469A1F86EA2000B320F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E04D469C1F86EA2000B320F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E05C198D2106D32B00303722 /* MemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
+		E06872BE20FC3AC700FBD0D7 /* MemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTableViewController.swift; sourceTree = "<group>"; };
+		E06872C020FC3ADE00FBD0D7 /* MemeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				E04D46901F86EA2000B320F7 /* AppDelegate.swift */,
 				E01892E5206049CC0091A969 /* MemeStructModel.swift */,
 				E04D46921F86EA2000B320F7 /* MemeEditorViewController.swift */,
+				E05C198D2106D32B00303722 /* MemeDetailViewController.swift */,
+				E06872BE20FC3AC700FBD0D7 /* MemeTableViewController.swift */,
+				E06872C020FC3ADE00FBD0D7 /* MemeCollectionViewController.swift */,
 				E04D46941F86EA2000B320F7 /* Main.storyboard */,
 				E04D46971F86EA2000B320F7 /* Assets.xcassets */,
 				E04D46991F86EA2000B320F7 /* LaunchScreen.storyboard */,
@@ -94,7 +103,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Jaydev Shah";
 				TargetAttributes = {
 					E04D468C1F86EA2000B320F7 = {
@@ -141,7 +150,10 @@
 			files = (
 				E04D46931F86EA2000B320F7 /* MemeEditorViewController.swift in Sources */,
 				E04D46911F86EA2000B320F7 /* AppDelegate.swift in Sources */,
+				E06872C120FC3ADE00FBD0D7 /* MemeCollectionViewController.swift in Sources */,
+				E05C198E2106D32B00303722 /* MemeDetailViewController.swift in Sources */,
 				E01892E6206049CC0091A969 /* MemeStructModel.swift in Sources */,
+				E06872BF20FC3AC700FBD0D7 /* MemeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +193,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -188,6 +201,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -238,6 +252,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -245,6 +260,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
