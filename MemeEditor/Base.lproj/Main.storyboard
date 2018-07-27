@@ -155,16 +155,16 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="yha-yf-THt"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="umQ-Va-iCi">
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="umQ-Va-iCi">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PmD-tt-c7v">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PmD-tt-c7v">
                                 <rect key="frame" x="0.0" y="576" width="375" height="47"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cc-iN-tvi">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cc-iN-tvi">
                                 <rect key="frame" x="0.0" y="64" width="375" height="47"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
@@ -203,12 +203,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bottomTextField" destination="PmD-tt-c7v" id="d9x-3f-nsS"/>
+                        <outlet property="bottomTextField" destination="PmD-tt-c7v" id="CQa-ai-Js6"/>
                         <outlet property="cameraButton" destination="Sch-98-rMe" id="e4k-fZ-QXw"/>
-                        <outlet property="memeImage" destination="umQ-Va-iCi" id="24y-Y1-eja"/>
+                        <outlet property="memeImage" destination="umQ-Va-iCi" id="hFt-C5-Ho1"/>
                         <outlet property="shareButton" destination="WBw-b6-Ex7" id="hGj-7i-n9G"/>
                         <outlet property="toolBar" destination="GSx-SK-5PL" id="QZi-df-ANg"/>
-                        <outlet property="topTextField" destination="5cc-iN-tvi" id="XIs-2I-8xe"/>
+                        <outlet property="topTextField" destination="5cc-iN-tvi" id="MnS-Ai-GVa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -262,9 +262,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bottomTextField" destination="ipT-vN-HJA" id="uKq-Ql-nSX"/>
-                        <outlet property="memeImage" destination="UV8-BG-7qt" id="OYK-sU-Xvv"/>
-                        <outlet property="topTextField" destination="mwR-tl-x8W" id="PCU-ZU-zAG"/>
+                        <outlet property="bottomTextField" destination="ipT-vN-HJA" id="Xgx-kn-GNN"/>
+                        <outlet property="memeImage" destination="UV8-BG-7qt" id="N7e-WS-fJO"/>
+                        <outlet property="topTextField" destination="mwR-tl-x8W" id="FdR-Xd-CFh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nP-Kb-wa3" sceneMemberID="firstResponder"/>

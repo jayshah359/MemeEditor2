@@ -29,14 +29,17 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 	
 	// Handles setting the image when the user uses the image picker
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-		// TODO: if the currentmeme image is nil, or if the new image != currentmeme image set sharebutton on
 		if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
 			memeImage.image = image
-			shareButton.isEnabled = true
+			//print(memeImage.image?.description)
+			//print(image.description)
+			activateShareButton()
+			
 		}
 		dismiss(animated: true, completion: {
 			UIViewController.attemptRotationToDeviceOrientation()
 		})
+
 	}
 	
 	// MARK: UITextFieldDelegate functions
@@ -44,6 +47,7 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		// TODO: if currentmeme not nil, and toptext != currentmeme.toptext or bottomtext != currentmeme.bottomtext set sharebutton on
 		textField.resignFirstResponder()
+		activateShareButton()
 		return true
 	}
 	
@@ -206,13 +210,17 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 	}
 	
 	func activateShareButton() {
-		//if currentmeme is nil && (image != nil && top != "TOP" && bottom != "BOTTOM")
-		// enable share
-		//else if currentmeme is not nil && (image != currentmeme.image || top != currentmeme.top || bottom != currentmeme.bottom)
-		// enable share
-		//else
-		// disable share
-		shareButton.isEnabled = true
+		if let currentMeme = currentMeme {
+			if (memeImage.image != currentMeme.originalImage || topTextField.text != currentMeme.topText || bottomTextField.text != currentMeme.bottomText) {
+				shareButton.isEnabled = true
+			} else {
+				shareButton.isEnabled = false
+			}
+		} else if (memeImage.image != nil && topTextField.text != "TOP" && bottomTextField.text != "BOTTOM") {
+			shareButton.isEnabled = true
+		} else {
+			shareButton.isEnabled = false
+		}
 	}
 }
 

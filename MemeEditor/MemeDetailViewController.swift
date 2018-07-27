@@ -10,17 +10,26 @@ import UIKit
 
 class MemeDetailViewController: UIViewController, UITextFieldDelegate {
 	
+//	@IBOutlet weak var memeImage: UIImageView!
+//	@IBOutlet weak var bottomTextField: UITextField!
+//	@IBOutlet weak var topTextField: UITextField!
+	
 	@IBOutlet weak var memeImage: UIImageView!
 	@IBOutlet weak var bottomTextField: UITextField!
 	@IBOutlet weak var topTextField: UITextField!
 	
 	var currentMeme: MemeModel? = nil
 	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		configureText(textField: topTextField, withText: currentMeme?.topText ?? "TOP")
 		configureText(textField: bottomTextField, withText: currentMeme?.bottomText ?? "BOTTOM")
 		memeImage.image = currentMeme?.originalImage
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+
 		topTextField.isEnabled = false
 		bottomTextField.isEnabled = false
 	}

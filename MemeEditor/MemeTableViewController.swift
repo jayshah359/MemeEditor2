@@ -13,12 +13,7 @@ class MemeTableViewController: UITableViewController {
 	
 	// MARK: Properties
 	
-	// Get ahold of some memes, for the table
-	// This is an array of MemeModel instances
-	//let allMemes = MemeModel.allMemes
-	
-	// MARK: Table View Data Source
-	
+	// 
 	var selectedRow = 0
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
