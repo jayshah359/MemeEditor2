@@ -172,7 +172,7 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 		bottomTextField.resignFirstResponder()
 		
 		// Pop View Controller and return to sent memes view controller
-		//TODO: change to unwind segue
+		//TODO: change to unwind segue pt 2
 		navigationController?.popViewController(animated: true)
 	}
 	
