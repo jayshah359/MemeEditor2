@@ -145,6 +145,7 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 				// call save method here
 				self.saveMeme(with: memedImage)
 				// Pop View Controller and return to sent memes view controller
+				//TODO: change to unwind segue
 				self.navigationController?.popViewController(animated: true)
 			}
 		}
@@ -171,6 +172,7 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 		bottomTextField.resignFirstResponder()
 		
 		// Pop View Controller and return to sent memes view controller
+		//TODO: change to unwind segue
 		navigationController?.popViewController(animated: true)
 	}
 	
