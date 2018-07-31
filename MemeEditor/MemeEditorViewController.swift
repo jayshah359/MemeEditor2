@@ -31,8 +31,6 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 		if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
 			memeImage.image = image
-			//print(memeImage.image?.description)
-			//print(image.description)
 			activateShareButton()
 			
 		}
@@ -145,8 +143,9 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 				// call save method here
 				self.saveMeme(with: memedImage)
 				// Pop View Controller and return to sent memes view controller
-				//TODO: change to unwind segue
-				self.navigationController?.popViewController(animated: true)
+
+				self.performSegue(withIdentifier: "unwindFromEditorSegue", sender: self)
+
 			}
 		}
 		// Present the share view controller
@@ -172,8 +171,7 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 		bottomTextField.resignFirstResponder()
 		
 		// Pop View Controller and return to sent memes view controller
-		//TODO: change to unwind segue pt 2
-		navigationController?.popViewController(animated: true)
+		self.performSegue(withIdentifier: "unwindFromEditorSegue", sender: self)
 	}
 	
 	// Take the current display, hide the Nav bar and Tool bar, and resize the image as needed, in order to return an

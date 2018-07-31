@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-class MemeTableViewController: UITableViewController {
+class MemeTableViewController: UITableViewController, SentMemeViewControllers {
 	
 	// MARK: Properties
 	
 	// 
-	var selectedRow = 0
+	var selectedItem: Int?
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return MemeModel.allMemes.count
@@ -33,19 +33,21 @@ class MemeTableViewController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		selectedRow = (indexPath as NSIndexPath).row
-		self.performSegue(withIdentifier: "tableToDetailSegue", sender: self)
+		selectedItem = (indexPath as NSIndexPath).row
+//		self.performSegue(withIdentifier: "tableToDetailSegue", sender: self)
+		tabBarController?.performSegue(withIdentifier: "sentMemesToDetailSegue", sender: self)
 	}
 	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "tableToDetailSegue" {
-			let detailController = segue.destination as! MemeDetailViewController
-			detailController.currentMeme = MemeModel.allMemes[selectedRow]
-		}
-	}
+//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//		if segue.identifier == "tableToDetailSegue" {
+//			let detailController = segue.destination as! MemeDetailViewController
+//			detailController.currentMeme = MemeModel.allMemes[selectedItem]
+//		}
+//	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.tableView.reloadData()
 	}
+
 }

@@ -25,13 +25,13 @@ class MemeDetailViewController: UIViewController, UITextFieldDelegate {
 		configureText(textField: topTextField, withText: currentMeme?.topText ?? "TOP")
 		configureText(textField: bottomTextField, withText: currentMeme?.bottomText ?? "BOTTOM")
 		memeImage.image = currentMeme?.originalImage
+		topTextField.isEnabled = false
+		bottomTextField.isEnabled = false
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 
-		topTextField.isEnabled = false
-		bottomTextField.isEnabled = false
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

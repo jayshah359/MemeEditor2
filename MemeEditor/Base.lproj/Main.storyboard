@@ -12,11 +12,11 @@
         <!--Sent Memes-->
         <scene sceneID="g9P-co-Hi1">
             <objects>
-                <tabBarController id="aLU-kZ-s7H" sceneMemberID="viewController">
+                <tabBarController id="aLU-kZ-s7H" customClass="MemeTabBarViewController" customModule="MemeEditor" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Sent Memes" id="c74-P7-TtA">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="WlF-mx-6bV">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="7mY-e1-8Vb"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="sentMemesToEditorSegue" id="7mY-e1-8Vb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -28,34 +28,61 @@
                     <connections>
                         <segue destination="aLw-QZ-3zF" kind="relationship" relationship="viewControllers" id="iHv-Gn-ojl"/>
                         <segue destination="5Gt-ar-8cj" kind="relationship" relationship="viewControllers" id="Qn9-CJ-tJK"/>
+                        <segue destination="iys-TR-WzE" kind="show" identifier="sentMemesToDetailSegue" id="f5Y-81-hg8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEc-qK-5aY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-831" y="-192"/>
         </scene>
-        <!--Collection-->
+        <!--Sent Memes (Collection View)-->
         <scene sceneID="g38-qH-iHr">
             <objects>
-                <collectionViewController id="5Gt-ar-8cj" sceneMemberID="viewController">
+                <collectionViewController title="Sent Memes (Collection View)" id="5Gt-ar-8cj" customClass="MemeCollectionViewController" customModule="MemeEditor" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6xd-SH-l9G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eag-rU-kZh">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="167" height="114"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionCell" id="q2x-He-6eb">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionViewCell" id="q2x-He-6eb" customClass="MemeCollectionViewCell" customModule="MemeEditor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="167" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="167" height="114"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jor-t7-DKB">
+                                            <rect key="frame" x="0.0" y="0.0" width="167" height="114"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hH3-sQ-V3G">
+                                            <rect key="frame" x="62" y="73" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Jor-t7-DKB" secondAttribute="trailing" id="6Oh-Q4-eZ3"/>
+                                    <constraint firstItem="Jor-t7-DKB" firstAttribute="top" secondItem="q2x-He-6eb" secondAttribute="top" id="8GI-mS-zrR"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jor-t7-DKB" secondAttribute="bottom" id="JXI-b4-hs9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jor-t7-DKB" secondAttribute="trailing" id="PS2-Tf-dGC"/>
+                                    <constraint firstItem="Jor-t7-DKB" firstAttribute="leading" secondItem="q2x-He-6eb" secondAttribute="leading" id="SYZ-0n-45d"/>
+                                    <constraint firstItem="Jor-t7-DKB" firstAttribute="leading" secondItem="q2x-He-6eb" secondAttribute="leading" id="fzy-EI-dhG"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jor-t7-DKB" secondAttribute="bottom" id="h3U-ZK-lGE"/>
+                                    <constraint firstItem="Jor-t7-DKB" firstAttribute="top" secondItem="q2x-He-6eb" secondAttribute="top" id="vSa-vI-00p"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="memeImageView" destination="Jor-t7-DKB" id="2hj-H2-YaR"/>
+                                    <outlet property="memeNameLabel" destination="hH3-sQ-V3G" id="koG-3v-dJt"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -64,10 +91,13 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Collection" id="But-xk-C7T"/>
+                    <connections>
+                        <outlet property="flowLayout" destination="eag-rU-kZh" id="wHW-C6-FrQ"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFx-KE-Y3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89" y="390"/>
+            <point key="canvasLocation" x="88.799999999999997" y="389.95502248875567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zOR-0n-f47">
@@ -118,9 +148,6 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Table" id="wyY-Pd-fQz"/>
-                    <connections>
-                        <segue destination="iys-TR-WzE" kind="show" identifier="tableToDetailSegue" id="N8m-Sf-2xq"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFE-zB-UsV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,13 +232,15 @@
                     <connections>
                         <outlet property="bottomTextField" destination="PmD-tt-c7v" id="CQa-ai-Js6"/>
                         <outlet property="cameraButton" destination="Sch-98-rMe" id="e4k-fZ-QXw"/>
-                        <outlet property="memeImage" destination="umQ-Va-iCi" id="hFt-C5-Ho1"/>
+                        <outlet property="memeImage" destination="umQ-Va-iCi" id="Pfw-Zy-yYh"/>
                         <outlet property="shareButton" destination="WBw-b6-Ex7" id="hGj-7i-n9G"/>
                         <outlet property="toolBar" destination="GSx-SK-5PL" id="QZi-df-ANg"/>
                         <outlet property="topTextField" destination="5cc-iN-tvi" id="MnS-Ai-GVa"/>
+                        <segue destination="aPc-Yj-494" kind="unwind" identifier="unwindFromEditorSegue" unwindAction="unwindFromEditorVC:" id="EdP-VY-4Bt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="aPc-Yj-494" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1161" y="120"/>
         </scene>
@@ -273,6 +302,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="p4a-r0-IpB"/>
+        <segue reference="7mY-e1-8Vb"/>
     </inferredMetricsTieBreakers>
 </document>
