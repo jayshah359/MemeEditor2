@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MemeCollectionViewCell: UICollectionViewCell, SentMemeViewCell {
+class MemeCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var imageView: UIImageView?
 	@IBOutlet weak var textLabel: UILabel!
 }
 
-protocol SentMemeViewCell {
-	var imageView: UIImageView? { get }
-}
+//protocol SentMemeViewCell {
+//	var imageView: UIImageView? { get }
+//}

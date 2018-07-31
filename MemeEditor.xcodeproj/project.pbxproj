@@ -67,19 +67,27 @@
 			isa = PBXGroup;
 			children = (
 				E04D46901F86EA2000B320F7 /* AppDelegate.swift */,
-				E01892E5206049CC0091A969 /* MemeStructModel.swift */,
-				E04D46921F86EA2000B320F7 /* MemeEditorViewController.swift */,
-				E05C198D2106D32B00303722 /* MemeDetailViewController.swift */,
-				E06872BE20FC3AC700FBD0D7 /* MemeTableViewController.swift */,
-				E05C19CD210EBA9900303722 /* MemeTabBarViewController.swift */,
-				E06872C020FC3ADE00FBD0D7 /* MemeCollectionViewController.swift */,
-				E05C19CF210EC74500303722 /* MemeCollectionViewCell.swift */,
 				E04D46941F86EA2000B320F7 /* Main.storyboard */,
-				E04D46971F86EA2000B320F7 /* Assets.xcassets */,
-				E04D46991F86EA2000B320F7 /* LaunchScreen.storyboard */,
-				E04D469C1F86EA2000B320F7 /* Info.plist */,
+				E05C19CF210EC74500303722 /* MemeCollectionViewCell.swift */,
+				E06872C020FC3ADE00FBD0D7 /* MemeCollectionViewController.swift */,
+				E05C198D2106D32B00303722 /* MemeDetailViewController.swift */,
+				E04D46921F86EA2000B320F7 /* MemeEditorViewController.swift */,
+				E01892E5206049CC0091A969 /* MemeStructModel.swift */,
+				E05C19CD210EBA9900303722 /* MemeTabBarViewController.swift */,
+				E06872BE20FC3AC700FBD0D7 /* MemeTableViewController.swift */,
+				E07864CE211061CC0091722C /* Support Files */,
 			);
 			path = MemeEditor;
+			sourceTree = "<group>";
+		};
+		E07864CE211061CC0091722C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E04D46991F86EA2000B320F7 /* LaunchScreen.storyboard */,
+				E04D469C1F86EA2000B320F7 /* Info.plist */,
+				E04D46971F86EA2000B320F7 /* Assets.xcassets */,
+			);
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

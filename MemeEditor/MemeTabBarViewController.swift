@@ -39,16 +39,16 @@ protocol SentMemeViewControllers {
 	var selectedItem: Int? { get set }
 }
 
-protocol SentMemeWithImageViewControllers: SentMemeViewControllers {
-	func configureCellImage(_ cell: SentMemeViewCell, withMeme meme: MemeModel) -> SentMemeViewCell
-}
-
-extension SentMemeWithImageViewControllers {
-	func configureCellImage(_ cell: SentMemeViewCell, withMeme meme: MemeModel) -> SentMemeViewCell {
-
-		// Set the image
-		//TODO: if memedimage exists, use it, otherwise use original image
-		cell.imageView?.image = meme.originalImage
-		return cell
-	}
-}
+//protocol SentMemeWithImageViewControllers: SentMemeViewControllers {
+//	func configureCellImage(_ cell: SentMemeViewCell, withMeme meme: MemeModel) -> SentMemeViewCell
+//}
+//
+//extension SentMemeWithImageViewControllers {
+//	func configureCellImage(_ cell: SentMemeViewCell, withMeme meme: MemeModel) -> SentMemeViewCell {
+//
+//		// Set the image
+//		//if memedimage exists, use it, otherwise use original image
+//		cell.imageView?.image = meme.memedImage ?? meme.originalImage
+//		return cell
+//	}
+//}

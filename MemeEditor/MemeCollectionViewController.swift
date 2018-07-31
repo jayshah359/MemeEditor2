@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MemeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, SentMemeWithImageViewControllers {
+class MemeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, SentMemeViewControllers {
 	
 	// MARK: Properties
 	var selectedItem: Int?
@@ -64,11 +64,14 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
 	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
 		let meme = MemeModel.allMemes[(indexPath as NSIndexPath).row]
-		var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
-		cell = configureCellImage(cell, withMeme: meme) as! MemeCollectionViewCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
+		cell.imageView?.image = meme.memedImage ?? meme.originalImage
 		//TODO: set text enabled if using original image
+		if let _ = meme.memedImage {
+			cell.textLabel.isHidden = true
+		}
 		//else set text disabled
-		//cell.textLabel?.text = meme.topText + "/" + meme.bottomText
+		cell.textLabel?.text = meme.topText + "/" + meme.bottomText
 		return cell
 	}
 }

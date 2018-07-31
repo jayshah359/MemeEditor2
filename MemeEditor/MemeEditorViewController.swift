@@ -8,15 +8,19 @@
 
 import UIKit
 
-class MemeEditorViewController: MemeDetailViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, MemeDetailAndEditor, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 	
 	// MARK: IBOutlets for UI Elements
+	@IBOutlet weak var memeImage: UIImageView!
+	@IBOutlet weak var bottomTextField: UITextField!
+	@IBOutlet weak var topTextField: UITextField!
 	@IBOutlet weak var shareButton: UIBarButtonItem!
 	@IBOutlet weak var cameraButton: UIBarButtonItem!
 	@IBOutlet weak var toolBar: UIToolbar!
 	
 	
 	// MARK: Properties
+	var currentMeme: MemeModel? = nil
 
 	// Variable to keep track of active text field to be used to slide up current view
 	var activeTextField: UITextField?
@@ -60,8 +64,11 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-		// Set up default text field values		
-		shareButton.isEnabled = false
+		// Set up default text field values
+		setupView()
+		topTextField.delegate = self
+		bottomTextField.delegate = self
+//		shareButton.isEnabled = false
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -69,8 +76,8 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 		// enable the camera button if possible, subscribe to keyboard notifications
 		cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
 		subscribeToKeyboardNotifications()
-		topTextField.isEnabled = true
-		bottomTextField.isEnabled = true
+//		topTextField.isEnabled = true
+//		bottomTextField.isEnabled = true
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -160,10 +167,10 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 	// Cancel button pressed
 	@IBAction func cancelMeme(_ sender: Any) {
 		// Reset the Meme Image and buttons, reset the text field values
-		memeImage.image = nil
-		shareButton.isEnabled = false
-		topTextField.text = "TOP"
-		bottomTextField.text = "BOTTOM"
+//		memeImage.image = nil
+//		shareButton.isEnabled = false
+//		topTextField.text = "TOP"
+//		bottomTextField.text = "BOTTOM"
 		
 		// Dismiss Keyboard
 		topTextField.resignFirstResponder()

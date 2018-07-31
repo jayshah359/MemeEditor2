@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MemeTableViewController: UITableViewController, SentMemeWithImageViewControllers {
+class MemeTableViewController: UITableViewController, SentMemeViewControllers {
 	
 	// MARK: Properties
 	
@@ -27,8 +27,8 @@ class MemeTableViewController: UITableViewController, SentMemeWithImageViewContr
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		let meme = MemeModel.allMemes[(indexPath as NSIndexPath).row]
-		var cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableCell")!
-		cell = configureCellImage(cell, withMeme: meme) as! UITableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableCell")!
+		cell.imageView?.image = meme.memedImage ?? meme.originalImage
 		cell.textLabel?.text = meme.topText + "/" + meme.bottomText
 		return cell
 	}
@@ -39,4 +39,4 @@ class MemeTableViewController: UITableViewController, SentMemeWithImageViewContr
 	}
 }
 
-extension UITableViewCell: SentMemeViewCell {}
+//extension UITableViewCell: SentMemeViewCell {}
