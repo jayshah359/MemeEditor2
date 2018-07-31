@@ -43,7 +43,6 @@ class MemeEditorViewController: MemeDetailViewController, UIImagePickerControlle
 	// MARK: UITextFieldDelegate functions
 	// On return from a text field, resign the fist responder
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		// TODO: if currentmeme not nil, and toptext != currentmeme.toptext or bottomtext != currentmeme.bottomtext set sharebutton on
 		textField.resignFirstResponder()
 		activateShareButton()
 		return true

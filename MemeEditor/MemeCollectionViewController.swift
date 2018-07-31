@@ -20,7 +20,8 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		//TODO: Implement flowLayout here.
+		
+		//TODO: Update and test flowLayout here.
 		
 		let space: CGFloat = 3.0
 		let xDimension = (view.frame.size.width - (3 * space)) / 4.0
@@ -65,7 +66,7 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
 		let meme = MemeModel.allMemes[(indexPath as NSIndexPath).row]
 		var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
 		cell = configureCellImage(cell, withMeme: meme) as! MemeCollectionViewCell
-		//set text enabled if using original image
+		//TODO: set text enabled if using original image
 		//else set text disabled
 		//cell.textLabel?.text = meme.topText + "/" + meme.bottomText
 		return cell

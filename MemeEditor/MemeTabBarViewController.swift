@@ -46,8 +46,8 @@ protocol SentMemeWithImageViewControllers: SentMemeViewControllers {
 extension SentMemeWithImageViewControllers {
 	func configureCellImage(_ cell: SentMemeViewCell, withMeme meme: MemeModel) -> SentMemeViewCell {
 
-		// Set the name and image
-		//if memedimage exists, use it, otherwise use original image
+		// Set the image
+		//TODO: if memedimage exists, use it, otherwise use original image
 		cell.imageView?.image = meme.originalImage
 		return cell
 	}
