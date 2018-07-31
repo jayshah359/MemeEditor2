@@ -27,18 +27,6 @@ class MemeTabBarViewController: UITabBarController {
 			if let selectedItem = (sender as? SentMemeViewControllers)?.selectedItem {
 				detailController.currentMeme = MemeModel.allMemes[selectedItem]
 			}
-		
-//			var selectedItem: Int
-//			if sender is MemeCollectionViewController {
-//				selectedItem = (sender as! MemeCollectionViewController).selectedItem!
-//			} else if sender is MemeTableViewController {
-//				selectedItem = (sender as! MemeTableViewController).selectedItem
-//			} else {
-//				return
-//			}
-//			detailController.currentMeme = MemeModel.allMemes[selectedItem]
-			
-			
 		}
 	}
 	
@@ -51,6 +39,16 @@ protocol SentMemeViewControllers {
 	var selectedItem: Int? { get set }
 }
 
-extension SentMemeViewControllers {
-	
+protocol SentMemeWithImageViewControllers: SentMemeViewControllers {
+	func configureCellImage(_ cell: SentMemeViewCell, withMeme meme: MemeModel) -> SentMemeViewCell
+}
+
+extension SentMemeWithImageViewControllers {
+	func configureCellImage(_ cell: SentMemeViewCell, withMeme meme: MemeModel) -> SentMemeViewCell {
+
+		// Set the name and image
+		//if memedimage exists, use it, otherwise use original image
+		cell.imageView?.image = meme.originalImage
+		return cell
+	}
 }

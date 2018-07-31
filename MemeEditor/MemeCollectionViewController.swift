@@ -9,19 +9,12 @@
 import Foundation
 import UIKit
 
-class MemeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, SentMemeViewControllers {
+class MemeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, SentMemeWithImageViewControllers {
 	
 	// MARK: Properties
 	var selectedItem: Int?
 	
-	// TODO: Add outlet to flowLayout here.
-	
 	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-	//@IBOutlet var collectionView: UICollectionView!
-	
-	// Get ahold of some villains, for the table
-	// This is an array of Villain instances
-	//let allVillains = Villain.allVillains
 	
 	// MARK: Life Cycle
 	
@@ -62,28 +55,19 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
 		return MemeModel.allMemes.count
 	}
 	
-	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
-		let meme = MemeModel.allMemes[(indexPath as NSIndexPath).row]
-		
-		// Set the name and image
-		cell.memeNameLabel?.text = meme.topText + "/" + meme.bottomText
-		cell.memeImageView?.image = meme.originalImage
-		
-		return cell
-	}
-	
 	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		selectedItem = (indexPath as NSIndexPath).row
-		//self.performSegue(withIdentifier: "collectionToDetailSegue", sender: self)
 		tabBarController?.performSegue(withIdentifier: "sentMemesToDetailSegue", sender: self)
 	}
 	
-//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//		if segue.identifier == "collectionToDetailSegue" {
-//			let detailController = segue.destination as! MemeDetailViewController
-//			detailController.currentMeme = MemeModel.allMemes[selectedItem]
-//		}
-//	}
+	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		
+		let meme = MemeModel.allMemes[(indexPath as NSIndexPath).row]
+		var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
+		cell = configureCellImage(cell, withMeme: meme) as! MemeCollectionViewCell
+		//set text enabled if using original image
+		//else set text disabled
+		//cell.textLabel?.text = meme.topText + "/" + meme.bottomText
+		return cell
+	}
 }

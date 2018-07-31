@@ -80,8 +80,8 @@
                                     <constraint firstItem="Jor-t7-DKB" firstAttribute="top" secondItem="q2x-He-6eb" secondAttribute="top" id="vSa-vI-00p"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="memeImageView" destination="Jor-t7-DKB" id="2hj-H2-YaR"/>
-                                    <outlet property="memeNameLabel" destination="hH3-sQ-V3G" id="koG-3v-dJt"/>
+                                    <outlet property="imageView" destination="Jor-t7-DKB" id="mdj-Od-zSg"/>
+                                    <outlet property="textLabel" destination="hH3-sQ-V3G" id="U20-dY-AOY"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -124,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" textLabel="jt0-y2-wg1" style="IBUITableViewCellStyleDefault" id="y61-6N-3UF">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" textLabel="jt0-y2-wg1" style="IBUITableViewCellStyleDefault" id="y61-6N-3UF" customClass="MemeTableViewCell" customModule="MemeEditor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y61-6N-3UF" id="Ybg-U3-bMi">
