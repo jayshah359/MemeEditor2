@@ -50,3 +50,7 @@ class MemeTabBarViewController: UITabBarController {
 protocol SentMemeViewControllers {
 	var selectedItem: Int? { get set }
 }
+
+extension SentMemeViewControllers {
+	
+}

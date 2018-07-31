@@ -90,7 +90,7 @@
                             <outlet property="delegate" destination="5Gt-ar-8cj" id="SnX-ey-JOR"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Collection" id="But-xk-C7T"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="Collection" id="But-xk-C7T"/>
                     <connections>
                         <outlet property="flowLayout" destination="eag-rU-kZh" id="wHW-C6-FrQ"/>
                     </connections>
@@ -147,7 +147,7 @@
                             <outlet property="delegate" destination="aLw-QZ-3zF" id="Wi2-aW-JCB"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Table" id="wyY-Pd-fQz"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="Table" id="wyY-Pd-fQz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFE-zB-UsV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,6 +301,10 @@
             <point key="canvasLocation" x="1161" y="-648"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Collection" width="30" height="30"/>
+        <image name="Table" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7mY-e1-8Vb"/>
     </inferredMetricsTieBreakers>
