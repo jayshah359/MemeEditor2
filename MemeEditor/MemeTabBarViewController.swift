@@ -8,19 +8,11 @@
 
 import UIKit
 
+// Defines the Meme tab bar view controller. Will store table and collection views of the Memes
 class MemeTabBarViewController: UITabBarController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-	
+	// MARK: Override functions
+	// The tab bar handles the segue to the detail view instead of the table or collection view
+	// use the selected item saved from before to set the current Meme in the new detail view controller
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "sentMemesToDetailSegue" {
 			let detailController = segue.destination as! MemeDetailViewController
@@ -30,25 +22,31 @@ class MemeTabBarViewController: UITabBarController {
 		}
 	}
 	
+	// MARK: IBAction functions
+	// This is so that we can unwind back to the tab bar view controller
 	@IBAction func unwindFromEditorVC(_ sender: UIStoryboardSegue) {
 		
 	}
 }
 
-protocol SentMemeViewControllers {
+// Any view controller that goes inside the tab bar view controller should conform to the
+// SentMemeViewControllers protocol. It will ensure a place to save the selected Meme so
+// we can perform the segue to the detail view controller from the tab bar view controller
+protocol SentMemeViewControllers: class {
+	// MARK: Properties
+	// Used to save the selected Meme before segueing
 	var selectedItem: Int? { get set }
+	var tabBarController: UITabBarController? { get }
 }
 
-//protocol SentMemeWithImageViewControllers: SentMemeViewControllers {
-//	func configureCellImage(_ cell: SentMemeViewCell, withMeme meme: MemeModel) -> SentMemeViewCell
-//}
-//
-//extension SentMemeWithImageViewControllers {
-//	func configureCellImage(_ cell: SentMemeViewCell, withMeme meme: MemeModel) -> SentMemeViewCell {
-//
-//		// Set the image
-//		//if memedimage exists, use it, otherwise use original image
-//		cell.imageView?.image = meme.memedImage ?? meme.originalImage
-//		return cell
-//	}
-//}
+// This extension provides a default implementation of a helper function that can be used whenever
+// we need to call didSelectItemAt
+extension SentMemeViewControllers {
+	// The implementation of didSelectItemAt for all controllers conforming to this protocol is
+	// the same, so we can use this helper function to perform the segue
+	func sentMemeView(didSelectItemAt indexPath: IndexPath) {
+		self.selectedItem = (indexPath as NSIndexPath).row
+		tabBarController?.performSegue(withIdentifier: "sentMemesToDetailSegue", sender: self)
+	}
+}
+
