@@ -29,7 +29,7 @@ class MemeTableViewController: UITableViewController, SentMemeViewControllers {
 		let meme = MemeModel.allMemes[(indexPath as NSIndexPath).row]
 		let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableCell")!
 		cell.imageView?.image = meme.memedImage ?? meme.originalImage
-		cell.textLabel?.text = meme.topText + "/" + meme.bottomText
+		cell.textLabel?.text = meme.topText + " / " + meme.bottomText
 		return cell
 	}
 	
@@ -38,5 +38,3 @@ class MemeTableViewController: UITableViewController, SentMemeViewControllers {
 		self.tableView.reloadData()
 	}
 }
-
-//extension UITableViewCell: SentMemeViewCell {}

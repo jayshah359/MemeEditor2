@@ -18,6 +18,7 @@
 		E05C19D0210EC74500303722 /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05C19CF210EC74500303722 /* MemeCollectionViewCell.swift */; };
 		E06872BF20FC3AC700FBD0D7 /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06872BE20FC3AC700FBD0D7 /* MemeTableViewController.swift */; };
 		E06872C120FC3ADE00FBD0D7 /* MemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06872C020FC3ADE00FBD0D7 /* MemeCollectionViewController.swift */; };
+		E0FB781B212E869900EF5397 /* MemeCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FB781A212E869900EF5397 /* MemeCollectionViewFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E05C19CF210EC74500303722 /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E06872BE20FC3AC700FBD0D7 /* MemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTableViewController.swift; sourceTree = "<group>"; };
 		E06872C020FC3ADE00FBD0D7 /* MemeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewController.swift; sourceTree = "<group>"; };
+		E0FB781A212E869900EF5397 /* MemeCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				E04D46941F86EA2000B320F7 /* Main.storyboard */,
 				E05C19CF210EC74500303722 /* MemeCollectionViewCell.swift */,
 				E06872C020FC3ADE00FBD0D7 /* MemeCollectionViewController.swift */,
+				E0FB781A212E869900EF5397 /* MemeCollectionViewFlowLayout.swift */,
 				E05C198D2106D32B00303722 /* MemeDetailViewController.swift */,
 				E04D46921F86EA2000B320F7 /* MemeEditorViewController.swift */,
 				E01892E5206049CC0091A969 /* MemeStructModel.swift */,
@@ -166,6 +169,7 @@
 				E04D46911F86EA2000B320F7 /* AppDelegate.swift in Sources */,
 				E05C19D0210EC74500303722 /* MemeCollectionViewCell.swift in Sources */,
 				E06872C120FC3ADE00FBD0D7 /* MemeCollectionViewController.swift in Sources */,
+				E0FB781B212E869900EF5397 /* MemeCollectionViewFlowLayout.swift in Sources */,
 				E05C198E2106D32B00303722 /* MemeDetailViewController.swift in Sources */,
 				E01892E6206049CC0091A969 /* MemeStructModel.swift in Sources */,
 				E06872BF20FC3AC700FBD0D7 /* MemeTableViewController.swift in Sources */,

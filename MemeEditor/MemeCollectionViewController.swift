@@ -13,8 +13,8 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
 	
 	// MARK: Properties
 	var selectedItem: Int?
-	
-	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+	//var itemsAcross: Int = 0
+	@IBOutlet weak var flowLayout: MemeCollectionViewFlowLayout!
 	
 	// MARK: Life Cycle
 	
@@ -22,35 +22,55 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
 		super.viewDidLoad()
 		
 		//TODO: Update and test flowLayout here.
+		//computer itemsAcross
+//		print(itemsAcross2())
+//		itemsAcross = itemsAcross2()
+		//flowLayout.minimumInteritemSpacing = space
+		//flowLayout.minimumLineSpacing = space
 		
-		let space: CGFloat = 3.0
-		let xDimension = (view.frame.size.width - (3 * space)) / 4.0
+		//flowLayout.itemSize = computeSize(withSpace: space, items: itemsAcross)
+
+//		let xDimension = (view.frame.size.width - (3 * space)) / 4.0
 		//let yDimension = (view.frame.size.height - (4 * space)) / 5.0
 		
-		flowLayout.minimumInteritemSpacing = space
-		flowLayout.minimumLineSpacing = space
-		flowLayout.itemSize = CGSize(width: xDimension, height: xDimension)
+//		flowLayout.minimumInteritemSpacing = space
+//		flowLayout.minimumLineSpacing = space
+//		flowLayout.itemSize = CGSize(width: xDimension, height: xDimension)
 	}
 	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		//self.tabBarController?.tabBar.isHidden = false
-		//collectionView!.reloadData()
-	}
+//	func computeSize(withSpace space: CGFloat, items: Int) -> CGSize {
+//
+//		let dimension = (view.frame.size.width - (CGFloat(items-1) * space)) / CGFloat(items)
+//		return CGSize(width: dimension, height: dimension)
+//	}
 	
-	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-		super.viewWillTransition(to: size, with: coordinator)
-		coordinator.animate(alongsideTransition: nil) {
-			_ in
-			self.collectionView!.collectionViewLayout.invalidateLayout()
-		}
-	}
+//	func itemsAcross2() -> Int {
+//		print("width: \(Int(view.frame.size.width))")
+//		return Int(view.frame.size.width) / 125
+//	}
 	
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let space: CGFloat = 3.0
-		let dimension = (view.frame.size.width - (3 * space)) / 4.0
-		return CGSize(width: dimension, height: dimension)
-	}
+//	override func viewWillAppear(_ animated: Bool) {
+//		super.viewWillAppear(animated)
+//		//self.tabBarController?.tabBar.isHidden = false
+//		//collectionView!.reloadData()
+//	}
+	
+//	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//		super.viewWillTransition(to: size, with: coordinator)
+//		//computer itemsAcross
+//		//print(itemsAcross2())
+//		itemsAcross = itemsAcross2()
+//		coordinator.animate(alongsideTransition: nil) {
+//			_ in
+//			self.itemsAcross = self.itemsAcross2()
+//			self.collectionView!.collectionViewLayout.invalidateLayout()
+//		}
+//	}
+	
+	// ?? move to custom flow layout?
+//	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//		return computeSize(withSpace: space, items: itemsAcross)
+//	}
 	
 	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return MemeModel.allMemes.count
@@ -65,13 +85,13 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
 		
 		let meme = MemeModel.allMemes[(indexPath as NSIndexPath).row]
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
-		cell.imageView?.image = meme.memedImage ?? meme.originalImage
-		//TODO: set text enabled if using original image
-		if let _ = meme.memedImage {
-			cell.textLabel.isHidden = true
+		cell.currentMeme = meme
+		cell.setupView(withFontSize: 12)
+		if let memedImage = meme.memedImage {
+			cell.memeImage.image = memedImage
+			cell.bottomTextField.isHidden = true
+			cell.topTextField.isHidden = true
 		}
-		//else set text disabled
-		cell.textLabel?.text = meme.topText + "/" + meme.bottomText
 		return cell
 	}
 }

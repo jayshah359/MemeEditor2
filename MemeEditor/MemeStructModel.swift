@@ -45,7 +45,8 @@ extension MemeModel {
 	static func localMemeData() -> [[String : String]] {
 		return [
 			[MemeModel.TopTextKey : "Top Text 1", MemeModel.BottomTextKey : "Bottom Text 1",  MemeModel.ImageKey : "Image1"],
-			[MemeModel.TopTextKey : "Top Text 2", MemeModel.BottomTextKey : "Bottom Text 2",  MemeModel.ImageKey : "Image2"]
+			[MemeModel.TopTextKey : "Top Text 2", MemeModel.BottomTextKey : "Bottom Text 2",  MemeModel.ImageKey : "Image2"],
+			[MemeModel.TopTextKey : "Top Text 3", MemeModel.BottomTextKey : "Bottom Text 3",  MemeModel.ImageKey : "Image1"]
 		]
 	}
 }

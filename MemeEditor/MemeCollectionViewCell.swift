@@ -8,11 +8,9 @@
 
 import UIKit
 
-class MemeCollectionViewCell: UICollectionViewCell {
-	@IBOutlet weak var imageView: UIImageView?
-	@IBOutlet weak var textLabel: UILabel!
+class MemeCollectionViewCell: UICollectionViewCell, MemeDetailAndEditor {
+	@IBOutlet weak var memeImage: UIImageView!
+	@IBOutlet weak var bottomTextField: UITextField!
+	@IBOutlet weak var topTextField: UITextField!
+	var currentMeme: MemeModel?
 }
-
-//protocol SentMemeViewCell {
-//	var imageView: UIImageView? { get }
-//}
