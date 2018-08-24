@@ -31,7 +31,7 @@ extension MemeModel {
 	// Generate an array full of all of the pre-populated memes
 	// Create and empty array first, then call the localMemeData function. Loop thru the results
 	// and create a Meme for each item by using the keys to get the image, and top and bottom text
-	// Store the Meme in the memeArray. If localMemeData returns an empty dictions we won't have
+	// Store the Meme in the memeArray. If localMemeData returns an empty dictionary we won't have
 	// any pre-populated Memes
 	static var allMemes: [MemeModel] = {
 		var memeArray = [MemeModel]()

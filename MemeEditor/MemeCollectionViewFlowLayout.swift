@@ -23,7 +23,7 @@ class MemeCollectionViewFlowLayout: UICollectionViewFlowLayout {
 		
 		guard let cv = collectionView else { return }
 
-		// get the new bounds' width, div by the min col width to know how many columns, then  determine
+		// get the new bounds' width, div by the min col width to know how many columns, then determine
 		// exact column width
 		let cvWidth = cv.bounds.insetBy(dx: cv.layoutMargins.left, dy: cv.layoutMargins.top).width
 		let maxNumColumns = Int(cvWidth / minColumnWidth)
