@@ -43,9 +43,7 @@ class MemeEditorViewController: UIViewController, MemeDetailAndEditor, UIImagePi
 			activateShareButton()
 			
 		}
-		dismiss(animated: true, completion: {
-			UIViewController.attemptRotationToDeviceOrientation()
-		})
+		dismiss(animated: true) { UIViewController.attemptRotationToDeviceOrientation() }
 	}
 	
 	// MARK: UITextFieldDelegate functions
@@ -239,4 +237,3 @@ class MemeEditorViewController: UIViewController, MemeDetailAndEditor, UIImagePi
 		}
 	}
 }
-

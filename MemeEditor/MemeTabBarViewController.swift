@@ -49,4 +49,3 @@ extension SentMemeViewControllers {
 		tabBarController?.performSegue(withIdentifier: "sentMemesToDetailSegue", sender: self)
 	}
 }
-

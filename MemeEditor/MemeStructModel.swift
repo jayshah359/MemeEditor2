@@ -6,7 +6,6 @@
 //  Copyright © 2018 Jaydev Shah. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 // Struct to store Meme
@@ -39,8 +38,7 @@ extension MemeModel {
 			if let imageName = d[MemeModel.ImageKey],
 				let image = UIImage(named: imageName),
 				let topText = d[MemeModel.TopTextKey],
-				let bottomText = d[MemeModel.BottomTextKey]
-			{
+				let bottomText = d[MemeModel.BottomTextKey]	{
 				memeArray.append(MemeModel(topText: topText, bottomText: bottomText, originalImage: image, memedImage: nil))
 			}
 		}
@@ -53,9 +51,9 @@ extension MemeModel {
 	// view, but for production we should return an empty array.
 	static func localMemeData() -> [[String : String]] {
 		return [
-			[MemeModel.TopTextKey : "Top Text 1", MemeModel.BottomTextKey : "Bottom Text 1",  MemeModel.ImageKey : "Image1"],
-			[MemeModel.TopTextKey : "Top Text 2", MemeModel.BottomTextKey : "Bottom Text 2",  MemeModel.ImageKey : "Image2"],
-			[MemeModel.TopTextKey : "Top Text 3", MemeModel.BottomTextKey : "Bottom Text 3",  MemeModel.ImageKey : "Image1"]
+//			[MemeModel.TopTextKey : "Top Text 1", MemeModel.BottomTextKey : "Bottom Text 1",  MemeModel.ImageKey : "Image1"],
+//			[MemeModel.TopTextKey : "Top Text 2", MemeModel.BottomTextKey : "Bottom Text 2",  MemeModel.ImageKey : "Image2"],
+//			[MemeModel.TopTextKey : "Top Text 3", MemeModel.BottomTextKey : "Bottom Text 3",  MemeModel.ImageKey : "Image1"]
 		]
 	}
 }

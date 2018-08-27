@@ -6,7 +6,6 @@
 //  Copyright © 2018 Jaydev Shah. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 // Defines the Meme collection view controller. Conforms to SentMemeViewControllers protocol
