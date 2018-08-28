@@ -46,4 +46,10 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
 		}
 		return cell
 	}
+	
+	// Call reload data on viewWillAppear
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.collectionView?.reloadData()
+	}
 }
